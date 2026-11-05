@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Pregledna verzija. Pravi sajt ide na sopstveni domen.

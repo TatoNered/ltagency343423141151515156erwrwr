@@ -11,6 +11,14 @@ const SRC = join(ROOT, "src");
 const OUT = join(ROOT, "dist");
 
 const site = JSON.parse(readFileSync(join(SRC, "data/site.json"), "utf8"));
+
+// Публикация в подпапку (GitHub Pages без своего домена):
+//   BASE=/ime-repozitorijuma PREVIEW=1 node build.mjs
+// BASE префиксует sve unutrašnje putanje, PREVIEW dodaje noindex i zatvara robots.txt,
+// da pregledna verzija ne pravi duplikat budućem sajtu na pravom domenu.
+const BASE = (process.env.BASE || "").replace(/\/$/, "");
+const PREVIEW = process.env.PREVIEW === "1";
+if (BASE) site.url = (process.env.PREVIEW_URL || site.url).replace(/\/$/, "") + BASE;
 const nav = JSON.parse(readFileSync(join(SRC, "data/nav.json"), "utf8"));
 const layout = readFileSync(join(SRC, "layouts/base.html"), "utf8");
 
@@ -332,7 +340,7 @@ function render(p) {
     title: p.data.title,
     description: p.data.description,
     canonical: site.url + p.url,
-    robots: p.data.noindex === "true" ? '\n<meta name="robots" content="noindex, follow">' : "",
+    robots: (PREVIEW || p.data.noindex === "true") ? '\n<meta name="robots" content="noindex, follow">' : "",
     alternates: alts,
     ogType: p.data.type === "article" ? "article" : "website",
     ogImage: site.url + (p.data.image || site.ogImage),
@@ -365,10 +373,14 @@ function render(p) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 
+const withBase = html => BASE
+  ? html.replace(/\b(href|src)="\/(?!\/)/g, `$1="${BASE}/`)
+  : html;
+
 for (const p of pages) {
   const dir = join(OUT, p.url);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), render(p));
+  writeFileSync(join(dir, "index.html"), withBase(render(p)));
 }
 
 // статика
@@ -394,12 +406,13 @@ writeFileSync(join(OUT, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
 
 // robots
-writeFileSync(join(OUT, "robots.txt"),
+if (PREVIEW) writeFileSync(join(OUT, "robots.txt"), `User-agent: *\nDisallow: /\n\n# Pregledna verzija. Pravi sajt ide na sopstveni domen.\n`);
+else writeFileSync(join(OUT, "robots.txt"),
   `User-agent: *\nAllow: /\n\n# AI pretraživači -- svesno puštamo\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Bingbot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
 
 // 404
 const nf = pages.find(p => p.key === "404" && p.lang === site.defaultLang);
-if (nf) writeFileSync(join(OUT, "404.html"), render(nf));
+if (nf) writeFileSync(join(OUT, "404.html"), withBase(render(nf)));
 
 // заголовки для Netlify/Cloudflare — безвредны на обычном хостинге
 writeFileSync(join(OUT, "_headers"),
