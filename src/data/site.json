@@ -1,0 +1,67 @@
+{
+  "_napomena": "Jedino mesto gde se menjaju ime, domen i kontakt. Sve ---POPUNITI--- vrednosti zameniti pre objavljivanja.",
+
+  "name": "LT Agency",
+  "url": "https://ltagency.rs",
+  "defaultLang": "sr",
+
+  "email": "info@ltagency.rs",
+  "phone": "+381 ---POPUNITI---",
+  "viber": "+381 ---POPUNITI---",
+
+  "address": {
+    "street": "---POPUNITI--- (ulica i broj)",
+    "zip": "11000",
+    "city": "Beograd"
+  },
+  "geo": { "lat": 44.8125, "lon": 20.4612 },
+
+  "areaServed": ["Beograd", "Zemun", "Novi Beograd", "Voždovac", "Zvezdara", "Vračar", "Čukarica"],
+  "priceRange": "€€",
+
+  "sameAs": [
+    "https://www.google.com/maps/---POPUNITI--- (link ka Google profilu firme)",
+    "https://www.linkedin.com/company/---POPUNITI---",
+    "https://www.instagram.com/---POPUNITI---"
+  ],
+
+  "logo": "/assets/logo.svg",
+  "ogImage": "/assets/og.png",
+
+  "author": { "name": "Timur Simonov", "url": "/o-nama/tim/" },
+
+  "hreflang": { "sr": "sr-Latn-RS", "ru": "ru", "en": "en" },
+  "langLabel": { "sr": "SR", "ru": "RU", "en": "EN" },
+  "home": { "sr": "Početna", "ru": "Главная", "en": "Home" },
+  "navLabel": { "sr": "Glavni meni", "ru": "Основное меню", "en": "Main menu" },
+  "crumbLabel": { "sr": "Putanja", "ru": "Навигация", "en": "Breadcrumb" },
+  "tocLabel": { "sr": "Na ovoj strani", "ru": "На этой странице", "en": "On this page" },
+  "skip": { "sr": "Pređi na sadržaj", "ru": "Перейти к содержанию", "en": "Skip to content" },
+
+  "cta": {
+    "sr": {
+      "title": "Pošaljite adresu sajta",
+      "text": "Za dva radna dana dobijate spisak onoga što koči vaš sajt i šta bi prvo dalo efekat. Bez obaveze i bez prodajnog poziva.",
+      "btn": "Besplatna analiza",
+      "url": "/besplatna-analiza/"
+    },
+    "ru": {
+      "title": "Пришлите адрес сайта",
+      "text": "За два рабочих дня получите список того, что мешает сайту, и что даст эффект первым. Без обязательств.",
+      "btn": "Бесплатный разбор",
+      "url": "/ru/besplatnyy-razbor/"
+    },
+    "en": {
+      "title": "Send us your URL",
+      "text": "Within two working days you get a concrete list of what holds the site back and what would move first. No obligation.",
+      "btn": "Free site review",
+      "url": "/en/free-review/"
+    }
+  },
+
+  "footerNote": {
+    "sr": "Radimo sa firmama iz Beograda i okoline. Sve cene su bez PDV-a.",
+    "ru": "Работаем с бизнесом в Белграде и окрестностях. Цены указаны без НДС.",
+    "en": "We work with companies in Belgrade and the surrounding area. Prices exclude VAT."
+  }
+}

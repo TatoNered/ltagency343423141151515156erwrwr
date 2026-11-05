@@ -1,0 +1,102 @@
+{
+  "sr": [
+    {
+      "label": "Usluge",
+      "url": "/usluge/"
+    },
+    {
+      "label": "Delatnosti",
+      "url": "/industrije/"
+    },
+    {
+      "label": "Cene",
+      "url": "/cene/"
+    },
+    {
+      "label": "Rezultati",
+      "url": "/rezultati/"
+    },
+    {
+      "label": "Tekstovi",
+      "url": "/blog/"
+    },
+    {
+      "label": "Kontakt",
+      "url": "/kontakt/"
+    }
+  ],
+  "ru": [
+    {
+      "label": "Услуги",
+      "url": "/ru/uslugi/"
+    },
+    {
+      "label": "Цены",
+      "url": "/ru/ceny/"
+    },
+    {
+      "label": "О нас",
+      "url": "/ru/o-nas/"
+    },
+    {
+      "label": "Контакт",
+      "url": "/ru/kontakt/"
+    }
+  ],
+  "en": [
+    {
+      "label": "Services",
+      "url": "/en/services/"
+    },
+    {
+      "label": "Pricing",
+      "url": "/en/pricing/"
+    },
+    {
+      "label": "About",
+      "url": "/en/about/"
+    },
+    {
+      "label": "Contact",
+      "url": "/en/contact/"
+    }
+  ],
+  "sr_foot": [
+    {
+      "label": "Gde radimo",
+      "url": "/lokacije/"
+    },
+    {
+      "label": "O nama",
+      "url": "/o-nama/"
+    },
+    {
+      "label": "Naš tim",
+      "url": "/o-nama/tim/"
+    },
+    {
+      "label": "Besplatna analiza",
+      "url": "/besplatna-analiza/"
+    }
+  ],
+  "ru_foot": [
+    {
+      "label": "Бесплатный разбор",
+      "url": "/ru/besplatnyy-razbor/"
+    },
+    {
+      "label": "На сербском",
+      "url": "/"
+    }
+  ],
+  "en_foot": [
+    {
+      "label": "Free site review",
+      "url": "/en/free-review/"
+    },
+    {
+      "label": "In Serbian",
+      "url": "/"
+    }
+  ]
+}

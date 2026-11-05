@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">{{robots}}
+{{alternates}}
+<meta property="og:type" content="{{ogType}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{ogImage}}">
+<meta property="og:site_name" content="{{siteName}}">
+<meta property="og:locale" content="{{lang}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{{schema}}</script>
+</head>
+<body class="{{bodyClass}}">
+<a class="skip" href="#main">{{skip}}</a>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="/" aria-label="{{siteName}}">
+      <svg width="26" height="20" viewBox="0 0 30 22" aria-hidden="true" focusable="false"><path d="M1 19V3h2.6v13.4h5.6V19z" fill="currentColor"/><path d="M12 3h16v2.6h-6.7V19h-2.6V5.6H12z" fill="currentColor"/></svg>
+      <span>{{siteName}}</span>
+    </a>
+
+    <input type="checkbox" id="navtoggle" class="navtoggle" hidden>
+    <label for="navtoggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+    <nav class="site-nav" aria-label="{{navAria}}">
+      <ul class="menu">{{menu}}</ul>
+      {{langSwitch}}
+    </nav>
+
+    <a class="head-cta" href="tel:{{phoneHref}}">{{phone}}</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    {{crumbs}}
+    <h1>{{h1}}</h1>
+    {{lede}}
+    {{toc}}
+    <div class="prose">
+      {{content}}
+    </div>
+
+    <aside class="cta">
+      <h2>{{ctaTitle}}</h2>
+      <p>{{ctaText}}</p>
+      <p><a class="btn" href="{{ctaUrl}}">{{ctaBtn}}</a></p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-brand">{{siteName}}</p>
+      <p class="small">{{footerNote}}</p>
+    </div>
+    <div class="small">
+      <p>{{addressLine}}</p>
+      <p><a href="tel:{{phoneHref}}">{{phone}}</a> &middot; Viber {{viber}}</p>
+      <p><a href="mailto:{{email}}">{{email}}</a></p>
+    </div>
+    <div class="small foot-nav">{{footNav}}</div>
+    <div class="small">
+      <p>&copy; {{year}} {{siteName}}</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
