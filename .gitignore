@@ -1,4 +1,5 @@
 dist/
+# site/ — готовая сборка, намеренно в репозитории
 node_modules/
 .DS_Store
 *.log
