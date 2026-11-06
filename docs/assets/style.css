@@ -25,6 +25,9 @@
   --ok:#107a53;
   --warn:#9a6a10;
 
+  --logo-1:#2b6cf0;
+  --logo-2:#0a3fa8;
+
   --shadow-sm:0 1px 2px rgba(15,22,35,.05), 0 1px 1px rgba(15,22,35,.04);
   --shadow:0 2px 4px rgba(15,22,35,.05), 0 8px 24px -12px rgba(15,22,35,.14);
   --shadow-lg:0 4px 8px rgba(15,22,35,.05), 0 20px 48px -20px rgba(15,22,35,.22);
@@ -63,6 +66,9 @@
 
     --ok:#4fc08d;
     --warn:#d4a44a;
+
+    --logo-1:#5b9bff;
+    --logo-2:#1d4ed8;
 
     --shadow-sm:0 1px 2px rgba(0,0,0,.4);
     --shadow:0 2px 4px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.7);
@@ -107,12 +113,24 @@ a:hover{text-decoration-thickness:.14em}
 .head-in{display:flex;align-items:center;gap:1rem;min-height:4.25rem;flex-wrap:wrap}
 
 .brand{
-  display:inline-flex;align-items:center;gap:.55rem;
-  font:650 1.0625rem/1 var(--sans);letter-spacing:-.02em;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font:680 1.1875rem/1 var(--sans);letter-spacing:-.03em;
   color:var(--ink);text-decoration:none;flex:none;
 }
-.brand svg{color:var(--brand);transition:transform .25s ease}
-.brand:hover svg{transform:translateX(2px)}
+.brand .mark{
+  flex:none;border-radius:11px;
+  box-shadow:0 1px 2px rgba(10,63,168,.2), 0 4px 12px -4px rgba(10,63,168,.35);
+  transition:transform .22s cubic-bezier(.3,1.4,.5,1);
+}
+.brand:hover .mark{transform:scale(1.06) rotate(-3deg)}
+@media (prefers-reduced-motion:reduce){
+  .brand .mark{transition:none}
+  .brand:hover .mark{transform:none}
+}
+@media (max-width:23.5rem){
+  .brand{font-size:1.0625rem;gap:.5rem}
+  .brand .mark{width:28px;height:28px;border-radius:9px}
+}
 
 .site-nav{display:flex;align-items:center;gap:1.25rem;margin-inline-start:auto}
 .menu{display:flex;gap:.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
