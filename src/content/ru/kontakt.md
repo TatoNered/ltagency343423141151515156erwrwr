@@ -11,7 +11,7 @@ bodyClass: short
 | | |
 | --- | --- |
 | Телефон и Viber | ---POPUNITI--- |
-| Почта | ---POPUNITI--- |
+| Почта | [ludmilamuhametova56@gmail.com](mailto:ludmilamuhametova56@gmail.com) |
 | Адрес | ---POPUNITI---, Белград |
 | Часы работы | понедельник–пятница, 9–18 |
 | Языки | сербский, русский, английский |
